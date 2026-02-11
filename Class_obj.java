@@ -4,7 +4,7 @@ public class Class_obj {
     String city;
     int age;
 
-    // creating constructor [constructors are used to initialisze variables or
+    // creating constructor [constructors are used to initialize variables or
     // properties]
     Class_obj(int id, String name, String city, int age) {
         this.id = id;
