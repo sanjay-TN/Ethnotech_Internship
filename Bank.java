@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Bank {
     private String username;
@@ -29,6 +30,7 @@ public class Bank {
     }
 
     public void set_amount(double amount) {
+
         this.amount = amount;
 
     }

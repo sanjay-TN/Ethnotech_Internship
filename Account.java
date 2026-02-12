@@ -13,7 +13,7 @@ public class Account extends Bank {
         a.get_amount();
         a.get_username();
 
-        // performing differrent operations
+        // // performing differrent operations
         a.check_balance();
         a.deposit(10000);
         a.withdraw(5005);
