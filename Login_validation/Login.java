@@ -2,9 +2,20 @@ package Login_validation;
 
 import java.util.Scanner;
 
-//  write a program to check login validation username="admin", password=1234 with number of attempts=3.
+class HandleError extends Exception {
+    HandleError(String s) {
+        super(s);
+
+    }
+
+    HandleError() {
+    }
+}
+
+// write a program to check login validation username="admin", password=1234
+// with number of attempts=3.
 public class Login {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws HandleError {
         Scanner sc = new Scanner(System.in);
 
         int attempts = 1;
@@ -30,12 +41,15 @@ public class Login {
             }
 
         }
-        if (logged_in == false)
+        try {
+            if (logged_in == false) {
+                throw new HandleError("you reached maximum attempts...try later");
+            }
+        } catch (HandleError e) {
+            e.printStackTrace();
 
-        {
-
-            System.out.println("you have reached your  attempts try later..");
         }
+
         sc.close();
     }
 }
