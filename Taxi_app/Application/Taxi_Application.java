@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.Taxi.Taxi;
+import Taxi_app.Booking_info.Booking;
+import Taxi_app.Taxi_info.Taxi;
 
 class NoTaxiAvailable extends Exception {
     NoTaxiAvailable(String s) {
@@ -85,7 +86,7 @@ public class Taxi_Application {
         int dropTime = pickupTime + Math.abs(drop - pickup);
         int amount = selectedTaxi.calculateEarnings(pickup, drop);
         int bookingId = selectedTaxi.bookings.size() + 1;
-        com.Booking.Booking booking = new com.Booking.Booking(bookingId, customerId, pickup, drop, pickupTime, dropTime,
+        Booking booking = new Booking(bookingId, customerId, pickup, drop, pickupTime, dropTime,
                 amount);
         selectedTaxi.addBooking(booking);
         System.out.println("Taxi-" + selectedTaxi.id + " is allocated.");
@@ -96,7 +97,7 @@ public class Taxi_Application {
             System.out.println("Taxi-" + taxi.id + " Total Earnings: Rs." + taxi.totalEarnings);
             System.out.printf("%-10s %-10s %-5s %-5s %-12s %-9s %-6s%n",
                     "BookingID", "CustomerID", "From", "To", "PickupTime", "DropTime", "Amount");
-            for (com.Booking.Booking booking : taxi.bookings) {
+            for (Booking booking : taxi.bookings) {
                 System.out.printf("%-10d %-10d %-5c %-5c %-12d %-9d %-6d%n",
                         booking.bookingId, booking.customerId, booking.from, booking.to,
                         booking.pickupTime, booking.dropTime, booking.amount);
