@@ -19,7 +19,7 @@ class Emp {
     String id;
 
    
-    @Validate(regex = "^\\d{10}$", message = "Phone must be exactly 10 digits!")
+    @Validate(regex = "^\\d{10}$", message = "Phone must be 10 digits")
     String phone;
 
     Emp(String name, String id, String phone) {
