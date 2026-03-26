@@ -159,10 +159,9 @@ function editDoctor(id, name, specialization) {
     return;
   }
 
-  const newName = prompt("Enter new name", name);
   const newSpec = prompt("Enter specialization", specialization);
-
-  if (!newName) return;
+  const exp = prompt("Enter experience (years)");
+  const fee = prompt("Enter consultation fee");
 
   const headers = authHeaders();
   if (!headers) return;
@@ -171,8 +170,9 @@ function editDoctor(id, name, specialization) {
     method: "PUT",
     headers: headers,
     body: JSON.stringify({
-      name: newName,
       specialization: newSpec,
+      experienceYears: exp ? parseInt(exp) : 0,
+      consultationFee: fee ? parseInt(fee) : null,
     }),
   })
     .then((res) => res.text())

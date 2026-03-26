@@ -86,19 +86,41 @@ public class DoctorService {
         return responseList;
     }
 	
-	public String updateDoctor(Long doctorId, UpdateDoctorRequest request) {
+	// public String updateDoctor(Long doctorId, UpdateDoctorRequest request) {
 
-	    Doctor doctor = doctorRepository.findById(doctorId)
-	            .orElseThrow(() -> new RuntimeException("Doctor not found"));
+	//     Doctor doctor = doctorRepository.findById(doctorId)
+	//             .orElseThrow(() -> new RuntimeException("Doctor not found"));
 
-	    doctor.setSpecialization(request.getSpecialization());
-	    doctor.setExperienceYears(request.getExperienceYears());
-	    doctor.setConsultationFee(request.getConsultationFee());
+	//     doctor.setSpecialization(request.getSpecialization());
+	//     doctor.setExperienceYears(request.getExperienceYears());
+	//     doctor.setConsultationFee(request.getConsultationFee());
 
-	    doctorRepository.save(doctor);
+	//     doctorRepository.save(doctor);
 
-	    return "Doctor updated successfully";
-	}
+	//     return "Doctor updated successfully";
+	// }
+
+    public String updateDoctor(Long doctorId, UpdateDoctorRequest request) {
+
+    Doctor doctor = doctorRepository.findById(doctorId)
+            .orElseThrow(() -> new RuntimeException("Doctor not found"));
+
+    // ✅ Update specialization
+    if (request.getSpecialization() != null)
+        doctor.setSpecialization(request.getSpecialization());
+
+    // ✅ Update experienceYears (since int cannot be null)
+    if (request.getExperienceYears() > 0)
+        doctor.setExperienceYears(request.getExperienceYears());
+
+    // ✅ Update consultationFee
+    if (request.getConsultationFee() != null)
+        doctor.setConsultationFee(request.getConsultationFee());
+
+    doctorRepository.save(doctor);
+
+    return "Doctor updated successfully";
+}
 	
 	public String deleteDoctor(Long doctorId) {
 

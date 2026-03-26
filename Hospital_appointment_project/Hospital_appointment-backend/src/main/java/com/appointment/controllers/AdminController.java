@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.*;
 public class AdminController {
 
     @GetMapping("/dashboard")
-    @PreAuthorize("hasRole('ADMIN')")
+    // @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public String adminDashboard() {
         return "Welcome Admin!";
     }

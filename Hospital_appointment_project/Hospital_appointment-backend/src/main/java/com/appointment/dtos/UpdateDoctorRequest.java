@@ -26,7 +26,4 @@ public class UpdateDoctorRequest {
 	public void setConsultationFee(Long consultationFee) {
 		this.consultationFee = consultationFee;
 	}
-
-    
-    
 }

@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.*;
 public class DoctorController {
 
     @PostMapping("/create-schedule")
-    @PreAuthorize("hasRole('DOCTOR')")
+    // @PreAuthorize("hasRole('DOCTOR')")
+    @PreAuthorize("hasAuthority('DOCTOR')")
     public String createSchedule() {
         return "Schedule created successfully";
     }
