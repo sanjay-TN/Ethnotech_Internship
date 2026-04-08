@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title desc">
+  <title id="title">Maya Chen avatar</title>
+  <desc id="desc">Illustrated placeholder portrait with warm tones.</desc>
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffb18f"/>
+      <stop offset="100%" stop-color="#ff715b"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="36" fill="url(#bg1)"/>
+  <circle cx="60" cy="47" r="22" fill="#fff2e8"/>
+  <path d="M28 98c5-18 18-28 32-28s27 10 32 28" fill="#fff2e8"/>
+  <path d="M38 44c2-14 14-22 22-22 11 0 23 8 24 24-6-6-13-10-24-10-9 0-16 3-22 8Z" fill="#8a3f2f"/>
+</svg>
