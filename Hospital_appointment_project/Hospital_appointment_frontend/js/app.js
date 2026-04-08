@@ -1,5 +1,21 @@
 const BASE_URL = "http://localhost:8080";
 
+document.addEventListener("DOMContentLoaded", () => {
+  bindForm("loginForm", login);
+  bindForm("registerForm", register);
+  bindForm("doctorCreateForm", createDoctor);
+});
+
+function bindForm(id, handler) {
+  const form = document.getElementById(id);
+  if (!form) return;
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    handler();
+  });
+}
+
 // ================= AUTH HEADER =================
 function authHeaders() {
   const token = localStorage.getItem("token");

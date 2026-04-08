@@ -1,66 +1,229 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Doctor Dashboard</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
-  <body>
-    <div class="container">
-      <div class="card">
-        <h2>Doctor Dashboard</h2>
+  <body class="page-dashboard">
+    <main class="container">
+      <div class="page-shell">
+        <header class="app-header">
+          <div>
+            <p class="eyebrow">Hospital Appointment System</p>
+            <h1>Doctor Dashboard</h1>
+            <p class="page-intro">
+              Create schedules, monitor your queue, and manage appointments from
+              a more polished and responsive doctor workspace.
+            </p>
+          </div>
 
-        <!-- CREATE SCHEDULE -->
-        <h3>Create Schedule</h3>
-        <input id="date" type="date" />
-        <input id="startTime" type="time" />
-        <input id="endTime" type="time" />
-        <input id="maxAppointments" placeholder="Max Appointments" />
+          <div class="header-actions">
+            <span class="role-pill">Doctor</span>
+            <button class="ghost-button" type="button" onclick="logout()">
+              Logout
+            </button>
+          </div>
+        </header>
 
-        <button onclick="createSchedule()">Create Schedule</button>
+        <nav class="section-nav" aria-label="Doctor sections">
+          <a href="#schedule-form-section">Create Schedule</a>
+          <a href="#schedule-list-section">My Schedules</a>
+          <a href="#queue-section">Queue</a>
+          <a href="#appointment-section">Manage Appointment</a>
+        </nav>
 
-        <!-- VIEW SCHEDULES -->
-        <h3>My Schedules</h3>
-        <button onclick="loadSchedules()">Load Schedules</button>
+        <div class="dashboard-grid">
+          <section
+            class="card section-card section-half"
+            id="schedule-form-section"
+          >
+            <div class="section-heading">
+              <div>
+                <h2>Create Schedule</h2>
+                <p>
+                  Add schedule slots with date, timing, and maximum appointment
+                  capacity.
+                </p>
+              </div>
+            </div>
 
-        <table class="table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Date</th>
-              <th>Start</th>
-              <th>End</th>
-              <th>Max</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="scheduleTable"></tbody>
-        </table>
+            <div class="info-banner">
+              Use 24-hour time format while creating or updating schedule slots.
+            </div>
 
-        <!-- QUEUE -->
-        <h3>Queue</h3>
-        <input id="queueScheduleId" placeholder="Schedule ID" />
-        <button onclick="loadQueue()">View Queue</button>
+            <div class="stack-form">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="date">Date</label>
+                  <input id="date" type="date" />
+                </div>
 
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Queue No</th>
-              <th>Patient Name</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody id="queueTable"></tbody>
-        </table>
+                <div class="field">
+                  <label for="maxAppointments">Max Appointments</label>
+                  <input
+                    id="maxAppointments"
+                    type="number"
+                    placeholder="Enter max appointments"
+                  />
+                </div>
 
-        <!-- APPOINTMENT CONTROL -->
-        <h3>Manage Appointment</h3>
-        <input id="appointmentId" placeholder="Appointment ID" />
+                <div class="field">
+                  <label for="startTime">Start Time</label>
+                  <input id="startTime" type="time" />
+                </div>
 
-        <button onclick="startAppointment()">Start</button>
-        <button onclick="completeAppointment()">Complete</button>
+                <div class="field">
+                  <label for="endTime">End Time</label>
+                  <input id="endTime" type="time" />
+                </div>
+              </div>
+
+              <div class="actions">
+                <button
+                  class="primary-button"
+                  type="button"
+                  onclick="createSchedule()"
+                >
+                  Create Schedule
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section class="card section-card" id="schedule-list-section">
+            <div class="section-heading">
+              <div>
+                <h2>My Schedules</h2>
+                <p>
+                  Review schedule IDs, session timing, and capacity before
+                  updating or deleting any schedule.
+                </p>
+              </div>
+
+              <div class="actions">
+                <button
+                  class="secondary-button"
+                  type="button"
+                  onclick="loadSchedules()"
+                >
+                  Load Schedules
+                </button>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Max</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="scheduleTable"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="card section-card section-half" id="queue-section">
+            <div class="section-heading">
+              <div>
+                <h2>Queue</h2>
+                <p>
+                  Enter a schedule ID to load the current patient queue for that
+                  schedule.
+                </p>
+              </div>
+            </div>
+
+            <div class="stack-form">
+              <div class="field">
+                <label for="queueScheduleId">Schedule ID</label>
+                <input
+                  id="queueScheduleId"
+                  type="number"
+                  placeholder="Enter schedule ID"
+                />
+              </div>
+
+              <div class="actions">
+                <button
+                  class="primary-button"
+                  type="button"
+                  onclick="loadQueue()"
+                >
+                  View Queue
+                </button>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Queue No</th>
+                    <th>Patient Name</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="queueTable"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="card section-card section-half" id="appointment-section">
+            <div class="section-heading">
+              <div>
+                <h2>Manage Appointment</h2>
+                <p>
+                  Enter an appointment ID and update the appointment once the
+                  consultation starts or completes.
+                </p>
+              </div>
+            </div>
+
+            <div class="info-banner">
+              Start an appointment when the patient enters the consultation and
+              complete it after the visit ends.
+            </div>
+
+            <div class="stack-form">
+              <div class="field">
+                <label for="appointmentId">Appointment ID</label>
+                <input
+                  id="appointmentId"
+                  type="number"
+                  placeholder="Enter appointment ID"
+                />
+              </div>
+
+              <div class="actions">
+                <button
+                  class="primary-button"
+                  type="button"
+                  onclick="startAppointment()"
+                >
+                  Start Appointment
+                </button>
+                <button
+                  class="secondary-button"
+                  type="button"
+                  onclick="completeAppointment()"
+                >
+                  Complete Appointment
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
-    </div>
+    </main>
 
     <script src="js/app.js"></script>
   </body>
