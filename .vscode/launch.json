@@ -1,0 +1,72 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "ChatappApplication",
+      "request": "launch",
+      "mainClass": "ChatappApplication",
+      "projectName": "Internship_64565758"
+    },
+    {
+      "type": "java",
+      "name": "CodingPlatformApplication",
+      "request": "launch",
+      "mainClass": "CodingPlatformApplication",
+      "projectName": "Internship_64565758"
+    },
+    {
+      "type": "java",
+      "name": "CodingPlatformApplication",
+      "request": "launch",
+      "mainClass": "com.codingplatform.CodingPlatformApplication",
+      "projectName": "coding-platform"
+    },
+    {
+      "type": "java",
+      "name": "HospitalAppointmentApplication",
+      "request": "launch",
+      "mainClass": "com.appointment.HospitalAppointmentApplication",
+      "projectName": "Hospital_appointment"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-DemoApplication<demo>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.mongodb.demo.DemoApplication",
+      "projectName": "demo",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-CodingPlatformApplication<Coding-platform>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.coding.CodingPlatformApplication",
+      "projectName": "Coding-platform",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-CodingPlatformApplication<com.codingplatform-coding-platform>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.codingplatform.CodingPlatformApplication",
+      "projectName": "com.codingplatform-coding-platform",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-ChatappBackendApplication<chatapp-backend>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.chatapp.chatapp_backend.ChatappBackendApplication",
+      "projectName": "chatapp-backend",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
