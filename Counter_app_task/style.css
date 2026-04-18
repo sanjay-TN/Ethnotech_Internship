@@ -1,0 +1,17 @@
+.counter {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
+
+.zero {
+  color: black;
+}
