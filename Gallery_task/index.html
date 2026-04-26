@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="A cinematic Marvel Cinematic Universe phases gallery with fullscreen slideshow controls."
+  >
+  <title>MCU Phases Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-orb orb-left"></div>
+  <div class="background-orb orb-right"></div>
+  <div class="background-grid"></div>
+
+  <main class="app-shell">
+    <section class="phase-section">
+      <div class="phase-grid" id="phaseGrid" aria-label="Marvel phases gallery cards"></div>
+    </section>
+  </main>
+
+  <div class="gallery-modal" id="galleryModal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <section
+      class="modal-panel glass-panel"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalPhaseTitle"
+    >
+      <header class="modal-header">
+        <div class="modal-copy">
+          <span class="modal-chip" id="modalPhaseLabel">Phase One</span>
+          <h2 id="modalPhaseTitle">The Assembly</h2>
+          <p class="modal-subtitle" id="modalPhaseSummary">
+            Discover the titles that launched the Marvel Cinematic Universe.
+          </p>
+        </div>
+
+        <div class="modal-actions">
+          <button class="icon-button" id="togglePlayback" type="button" aria-label="Pause slideshow">
+            <span class="button-icon" id="playbackIcon">||</span>
+          </button>
+          <button class="icon-button close-button" id="closeModal" type="button" aria-label="Close gallery">
+            X
+          </button>
+        </div>
+      </header>
+
+      <div class="progress-strip" id="progressStrip" aria-label="Slide progress indicators"></div>
+
+      <div class="gallery-stage">
+        <button class="nav-button prev" id="prevButton" type="button" aria-label="Previous image">
+          <span>&lt;</span>
+        </button>
+
+        <div class="gallery-frame">
+          <div class="image-glow"></div>
+          <img
+            class="gallery-media"
+            id="galleryImage"
+            src=""
+            alt=""
+          >
+          <div class="image-overlay">
+            <div class="image-meta">
+              <span class="image-index" id="imageIndex">01 / 05</span>
+              <h3 id="imageTitle">The Avengers (2012)</h3>
+            </div>
+          </div>
+        </div>
+
+        <button class="nav-button next" id="nextButton" type="button" aria-label="Next image">
+          <span>&gt;</span>
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
