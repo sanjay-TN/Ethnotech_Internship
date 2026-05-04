@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports | AI Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body data-page="reports">
+    <div class="app-shell">
+        <aside class="sidebar">
+            <a class="sidebar-brand" href="dashboard.html"><span class="brand-mark">AI</span><span>Expense Tracker</span></a>
+            <nav class="nav-list">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="expenses.html">Expenses</a>
+                <a class="active" href="reports.html">Reports</a>
+            </nav>
+            <button id="logoutBtn" class="ghost-btn">Logout</button>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">Reports</p>
+                    <h1>Spending Analytics</h1>
+                </div>
+                <button id="themeToggle" class="theme-toggle" type="button">Light</button>
+            </header>
+
+            <section class="glass-card reveal">
+                <div class="report-tabs" role="tablist">
+                    <button data-report="daily" type="button">Daily</button>
+                    <button data-report="weekly" type="button">Weekly</button>
+                    <button class="active" data-report="monthly" type="button">Monthly</button>
+                </div>
+                <div class="summary-grid report-summary">
+                    <article class="metric-card">
+                        <p>Income</p>
+                        <strong id="reportIncome">0</strong>
+                    </article>
+                    <article class="metric-card">
+                        <p>Expenses</p>
+                        <strong id="reportExpenses">0</strong>
+                    </article>
+                    <article class="metric-card">
+                        <p>Balance</p>
+                        <strong id="reportBalance">0</strong>
+                    </article>
+                </div>
+            </section>
+
+            <section class="dashboard-grid reveal">
+                <article class="glass-card chart-card">
+                    <div class="section-heading">
+                        <h2 id="trendTitle">Monthly Trend</h2>
+                        <span>Expense movement</span>
+                    </div>
+                    <canvas id="reportLineChart"></canvas>
+                </article>
+                <article class="glass-card chart-card">
+                    <div class="section-heading">
+                        <h2>Category Breakdown</h2>
+                        <span>Spending share</span>
+                    </div>
+                    <canvas id="reportBarChart"></canvas>
+                </article>
+            </section>
+        </main>
+    </div>
+    <div id="toastHost" class="toast-host"></div>
+    <script src="script.js"></script>
+</body>
+</html>

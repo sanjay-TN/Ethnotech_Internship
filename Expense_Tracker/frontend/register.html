@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | AI Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="register" class="auth-page">
+    <main class="auth-shell">
+        <section class="auth-panel glass-card reveal">
+            <div class="brand-block">
+                <span class="brand-mark">AI</span>
+                <div>
+                    <h1>Create Account</h1>
+                    <p>Start with your monthly income and let the app learn your habits.</p>
+                </div>
+            </div>
+
+            <form id="registerForm" class="form-stack" novalidate>
+                <label>
+                    Full name
+                    <input type="text" id="fullName" placeholder="Your name" required>
+                </label>
+                <label>
+                    Email
+                    <input type="email" id="email" placeholder="you@example.com" required>
+                </label>
+                <label>
+                    Monthly income
+                    <input type="number" id="monthlyIncome" placeholder="65000" min="0" step="0.01" required>
+                </label>
+                <label>
+                    Password
+                    <input type="password" id="password" placeholder="At least 8 characters" minlength="8" required>
+                </label>
+                <button class="primary-btn" type="submit">Register</button>
+            </form>
+
+            <p class="auth-switch">Already registered? <a href="login.html">Login</a></p>
+        </section>
+    </main>
+    <div id="toastHost" class="toast-host"></div>
+    <script src="script.js"></script>
+</body>
+</html>

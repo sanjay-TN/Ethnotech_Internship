@@ -1,0 +1,19 @@
+# Java / Maven
+target/
+.m2/
+*.class
+*.log
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local environment
+.env
+backend/backend-run.log
+backend/backend-run-error.log

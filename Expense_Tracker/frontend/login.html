@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | AI Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="login" class="auth-page">
+    <main class="auth-shell">
+        <section class="auth-panel glass-card reveal">
+            <div class="brand-block">
+                <span class="brand-mark">AI</span>
+                <div>
+                    <h1>AI Expense Tracker</h1>
+                    <p>Sign in to track, analyze and improve your spending.</p>
+                </div>
+            </div>
+
+            <form id="loginForm" class="form-stack" novalidate>
+                <label>
+                    Email
+                    <input type="email" id="email" placeholder="demo@example.com" required>
+                </label>
+                <label>
+                    Password
+                    <input type="password" id="password" placeholder="password123" minlength="8" required>
+                </label>
+                <button class="primary-btn" type="submit">Login</button>
+            </form>
+
+            <p class="auth-switch">New here? <a href="register.html">Create an account</a></p>
+        </section>
+    </main>
+    <div id="toastHost" class="toast-host"></div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | AI Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body data-page="dashboard">
+    <div class="app-shell">
+        <aside class="sidebar">
+            <a class="sidebar-brand" href="dashboard.html"><span class="brand-mark">AI</span><span>Expense Tracker</span></a>
+            <nav class="nav-list">
+                <a class="active" href="dashboard.html">Dashboard</a>
+                <a href="expenses.html">Expenses</a>
+                <a href="reports.html">Reports</a>
+            </nav>
+            <button id="logoutBtn" class="ghost-btn">Logout</button>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow" id="welcomeText">Welcome back</p>
+                    <h1>Financial Dashboard</h1>
+                </div>
+                <button id="themeToggle" class="theme-toggle" type="button">Light</button>
+            </header>
+
+            <div id="loading" class="loading"><span></span>Loading your money map...</div>
+
+            <section class="summary-grid reveal">
+                <article class="metric-card glass-card">
+                    <p>Total Income</p>
+                    <strong id="totalIncome">0</strong>
+                </article>
+                <article class="metric-card glass-card">
+                    <p>Total Expenses</p>
+                    <strong id="totalExpenses">0</strong>
+                </article>
+                <article class="metric-card glass-card">
+                    <p>Remaining Balance</p>
+                    <strong id="remainingBalance">0</strong>
+                </article>
+                <article class="metric-card glass-card">
+                    <p>Monthly Expenses</p>
+                    <strong id="monthExpenses">0</strong>
+                </article>
+            </section>
+
+            <section class="dashboard-grid reveal">
+                <article class="glass-card chart-card">
+                    <div class="section-heading">
+                        <h2>Category Spending</h2>
+                        <span>Current month</span>
+                    </div>
+                    <canvas id="categoryChart"></canvas>
+                </article>
+                <article class="glass-card chart-card">
+                    <div class="section-heading">
+                        <h2>Monthly Summary</h2>
+                        <span>Last 6 months</span>
+                    </div>
+                    <canvas id="monthlyChart"></canvas>
+                </article>
+            </section>
+
+            <section class="dashboard-grid reveal">
+                <article class="glass-card">
+                    <div class="section-heading">
+                        <h2>AI Insights</h2>
+                        <button id="refreshAiBtn" class="small-btn" type="button">Refresh</button>
+                    </div>
+                    <div id="aiInsights" class="insight-list"></div>
+                </article>
+                <article class="glass-card">
+                    <div class="section-heading">
+                        <h2>Recent Transactions</h2>
+                        <a href="expenses.html">Manage</a>
+                    </div>
+                    <div id="recentExpenses" class="transaction-list"></div>
+                </article>
+            </section>
+        </main>
+    </div>
+    <div id="toastHost" class="toast-host"></div>
+    <script src="script.js"></script>
+</body>
+</html>
