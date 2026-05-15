@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-ConceptClarityApplication<concept-clarity>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.conceptclarity.ConceptClarityApplication",
+      "projectName": "concept-clarity",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
